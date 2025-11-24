@@ -35,23 +35,21 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 5️⃣ Install JDK
+      # 5️⃣ Set up JDK
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: 17
 
-      # 6️⃣ Set up Android SDK environment variables
+      # 6️⃣ Set up Android SDK
       - name: Set up Android SDK
-        uses: reactivecircus/android-emulator-runner@v2
+        uses: android-actions/setup-android@v2
         with:
           api-level: 33
-          target: google_apis
-          arch: x86_64
-          force-avd-creation: true
+          build-tools: 33.0.2
 
-      # 7️⃣ Build APK
+      # 7️⃣ Build Release APK
       - name: Build Release APK
         run: |
           cd android
