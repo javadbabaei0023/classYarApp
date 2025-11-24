@@ -1,0 +1,5 @@
+{
+  "name": "Madrese Yar - School Attendance",
+  "description": "A comprehensive school attendance management system with Supabase backend, Jalali calendar support, and reporting.",
+  "requestFramePermissions": []
+}
